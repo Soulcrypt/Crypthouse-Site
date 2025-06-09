@@ -1,0 +1,32 @@
+/* Discord Banner background */
+.Discord-bg {
+  background: linear-gradient(to right, #1a1a1a, #1f1f1f); /* Add a subtle gradient background */
+  padding: 1.5rem; /* Adjust padding for a clean layout */
+  margin: 2rem; /* Increased margin to inset the banner further */
+  border-radius: 1rem; /* Add rounded corners for a polished look */
+}
+
+/* Discord Widget Hover Effects */
+.discord-banner {
+  background: linear-gradient(to right, #1a1a1a, #1f1f1f); /* Add a subtle gradient background */
+  padding: 1.5rem; /* Adjust padding for a clean layout */
+  margin: 2rem; /* Increased margin to inset the banner further */
+  border-radius: 1rem; /* Add rounded corners for a polished look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Added shadow for a 3D effect */
+}
+
+.discord-banner:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Discord Button Styling */
+.discord-button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.discord-button:hover {
+  background-color: #ff9898;
+  transform: scale(1.1);
+}

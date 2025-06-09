@@ -1,0 +1,43 @@
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
+interface Props {
+  children: React.ReactNode;
+  delay?: number;
+  yOffset?: number;
+  duration?: number; // Add duration to the Props interface
+}
+
+export default function ScrollReveal({
+  children,
+  delay = 0.2,
+  yOffset = 30,
+  duration = 0.6, // Default duration value
+}: Props) {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5, // Trigger when 50% of the element is visible
+    rootMargin: "0px 0px -20% 0px", // Trigger when the element is 20% into the viewport
+  });
+
+  useEffect(() => {
+    console.log("In view:", inView); // Debug log
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref} // Ensure this is attached
+      initial={{ opacity: 0, y: yOffset }}
+      animate={controls}
+      transition={{ duration, delay }} // Use the duration property here
+    >
+      {children}
+    </motion.div>
+  );
+}
+

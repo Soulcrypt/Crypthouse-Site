@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌑 Global Defaults */
+body {
+  @apply font-gothic bg-black text-white;
+  scroll-behavior: smooth;
+}
+
+#root {
+  @apply max-w-screen-2xl mx-auto px-6;
+}
+
+/* 💨 Fog Animation */
+@keyframes fogMotion {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-fogMotion {
+  animation: fogMotion 60s linear infinite;
+}
+
+/* 🧛 Optional Blood-Glow Button Hover (for StoneButton) */
+.button-glow {
+  transition: all 0.3s ease;
+}
+
+.button-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transform: scale(1.05);
+}
