@@ -23,7 +23,7 @@ export default function ScrollReveal({
   });
 
   useEffect(() => {
-    console.log("In view:", inView); // Debug log
+    // Start the reveal animation once the element is in view
     if (inView) {
       controls.start({ opacity: 1, y: 0 });
     }

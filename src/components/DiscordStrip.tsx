@@ -1,6 +1,7 @@
 import { FaDiscord } from "react-icons/fa";
 
-export default function FloatingDiscord() {
+// Floating Discord link that stays fixed in the bottom corner
+export default function DiscordStrip() {
   return (
     <a
       href="https://discord.gg/PqgWZS7XeX"
