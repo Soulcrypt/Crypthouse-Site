@@ -305,22 +305,6 @@ footer a:hover {
   }
 }
 
-.scrolling-wrapper {
-  display: flex;
-  width: 200%; /* Ensure enough space for seamless scrolling */
-  animation: scroll 15s linear infinite; /* Adjust duration as needed */
-}
-
-.scrolling-content {
-  display: inline-block;
-  white-space: nowrap;
-  margin-right: 5rem; /* Add space between items */
-}
-
-.hover\:pause-scroll:hover {
-  animation-play-state: paused; /* Pause the animation on hover */
-}
-
 /* Scrolling Notice Animation */
 @keyframes scroll-left-to-right {
   0% {
@@ -345,6 +329,7 @@ footer a:hover {
 .scrolling-content {
   display: inline-block;
   white-space: nowrap;
+  margin-right: 5rem; /* Add space between items */
 }
 
 .hover\:pause-scroll:hover {
