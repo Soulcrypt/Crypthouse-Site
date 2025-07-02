@@ -86,7 +86,7 @@ export default function Devlog() {
                 <h2 className="text-red-700 font-bold text-xl">
                   {post.id.replace(/-/g, " ")}
                 </h2>
-                <p className="text-gray-400 text-sm italic">May 1, 2025</p>
+                <p className="text-gray-300 text-sm italic">May 1, 2025</p>
               </div>
 
               {/* Expandable Content */}

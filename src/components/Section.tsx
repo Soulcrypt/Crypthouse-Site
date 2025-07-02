@@ -17,7 +17,7 @@ export default function Section({
   children,
   className = "",
   background,
-  padding = "py-16",
+  padding = "py-24",
   alignment = "center",
   style,
 }: SectionProps) {

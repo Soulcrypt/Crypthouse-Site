@@ -3,7 +3,7 @@ import { FaDiscord, FaYoutube, FaTwitter, FaInstagram, FaFacebook, FaTiktok, FaT
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 bg-gradient-to-b from-black to-gray-900 border-t border-red-900 text-gray-400 px-6 py-10 font-gothic">
+    <footer className="relative z-10 bg-gradient-to-b from-black to-gray-900 border-t border-red-900 text-gray-300 px-6 py-10 font-gothic">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
         {/* Logo / Title */}
@@ -11,7 +11,7 @@ export default function Footer() {
           <h2 className="text-3xl text-red-700 font-bold drop-shadow-[0_0_10px_rgba(255,0,0,0.7)]">
             Crypthouse Studio
           </h2>
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-sm text-gray-300">
             Born in the shadows of the grave.
           </p>
         </div>
@@ -34,8 +34,8 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="flex flex-col items-center md:items-end gap-4">
-          <p className="text-sm text-gray-500">Follow Us</p>
-          <div className="flex gap-4 text-2xl text-gray-400">
+          <p className="text-sm text-gray-300">Follow Us</p>
+          <div className="flex gap-4 text-2xl text-gray-300">
             <a
               href="https://discord.gg/PqgWZS7XeX"
               target="_blank"
@@ -107,7 +107,7 @@ export default function Footer() {
       <div className="my-8 border-t border-gray-700"></div>
 
       {/* Back to Top and Copyright */}
-      <div className="flex flex-col md:flex-row justify-between items-center text-center text-sm text-gray-500">
+      <div className="flex flex-col md:flex-row justify-between items-center text-center text-sm text-gray-300">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-red-500 hover:text-red-700 transition-all duration-300 mb-4 md:mb-0"
