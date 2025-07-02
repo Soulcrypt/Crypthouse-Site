@@ -13,6 +13,7 @@
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
     "aos": "^2.3.4",
+    "buffer": "^6.0.3",
     "classnames": "^2.5.1",
     "framer-motion": "^12.10.0",
     "gray-matter": "^4.0.3",

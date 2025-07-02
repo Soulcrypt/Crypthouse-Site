@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 import matter from "gray-matter";
+// Polyfill Node's Buffer for gray-matter in the browser
+import { Buffer } from "buffer";
+
+if (typeof globalThis !== "undefined" && !(globalThis as Record<string, unknown>).Buffer) {
+  (globalThis as Record<string, unknown>).Buffer = Buffer;
+}
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactMarkdown from "react-markdown";
