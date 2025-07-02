@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import matter from "gray-matter";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactMarkdown from "react-markdown";
@@ -14,7 +15,13 @@ import Divider from "../components/Divider";
 /** Developer diary with expandable markdown posts */
 export default function Devlog() {
   // Loaded markdown posts
-  const [posts, setPosts] = useState<{ id: string; content: string }[]>([]);
+  const [posts, setPosts] = useState<
+    {
+      id: string;
+      content: string;
+      data: { title?: string; date?: string; description?: string };
+    }[]
+  >([]);
   // Track which post is currently expanded
   const [expandedPost, setExpandedPost] = useState<string | null>(null);
 
@@ -26,11 +33,17 @@ export default function Devlog() {
       const markdownFiles = import.meta.glob("/src/devlog/*.md", { as: "raw" });
       const loadedPosts = await Promise.all(
         Object.entries(markdownFiles).map(async ([path, loader]) => {
-          const content = await loader();
+          const raw = await loader();
+          const { data, content } = matter(raw);
           const id = path.split("/").pop()?.replace(".md", "") || "unknown";
-          return { id, content };
+          return { id, content, data };
         })
       );
+      loadedPosts.sort((a, b) => {
+        const dateA = new Date(a.data.date || 0).getTime();
+        const dateB = new Date(b.data.date || 0).getTime();
+        return dateB - dateA;
+      });
       setPosts(loadedPosts);
     };
 
@@ -72,7 +85,7 @@ export default function Devlog() {
           {posts.map((post) => (
             <FramedPanel
               key={post.id}
-              title={post.id.replace(/-/g, " ")} // Convert file name to title
+              title={post.data.title || post.id.replace(/-/g, " ")}
               variant="default"
               className={`cursor-pointer transition-transform duration-300 ${
                 expandedPost === post.id ? "scale-105" : ""
@@ -84,9 +97,13 @@ export default function Devlog() {
               {/* Title and Date */}
               <div className="flex justify-between items-center mb-2">
                 <h2 className="text-red-700 font-bold text-xl">
-                  {post.id.replace(/-/g, " ")}
+                  {post.data.title || post.id.replace(/-/g, " ")}
                 </h2>
-                <p className="text-gray-300 text-sm italic">May 1, 2025</p>
+                {post.data.date && (
+                  <p className="text-gray-300 text-sm italic">
+                    {new Date(post.data.date).toLocaleDateString()}
+                  </p>
+                )}
               </div>
 
               {/* Expandable Content */}
@@ -129,6 +146,10 @@ export default function Devlog() {
                   </motion.div>
                 )}
               </AnimatePresence>
+
+              {expandedPost !== post.id && post.data.description && (
+                <p className="text-gray-300 mt-2">{post.data.description}</p>
+              )}
 
               {/* Read More Button */}
               {expandedPost !== post.id && (

@@ -1,7 +1,9 @@
+---
+title: "Introducing Crypthouse Studio"
+date: "2025-05-01"
+description: "Welcome to Crypthouse Studio, where we craft immersive gothic experiences born from the shadows of the grave."
+---
 # 🏰 Introducing Crypthouse Studio
-
-**📅 Date:** *May 1, 2025*
-
 ---
 
 Welcome to **Crypthouse Studio**, where we craft immersive gothic experiences born from the shadows of the grave. Our mission is to create games that are haunting, memorable, and resonate deeply with players.

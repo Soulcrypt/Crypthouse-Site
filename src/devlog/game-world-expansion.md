@@ -1,6 +1,7 @@
 ---
 title: "Game World Expansion: A New Frontier Awaits"
 date: "2025-05-07"
+description: "An overview of our largest update introducing new regions, mystical creatures, and gear."
 ---
 # 🌍 Game World Expansion: A New Frontier Awaits
 ---
