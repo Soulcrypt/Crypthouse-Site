@@ -40,7 +40,8 @@ export default function Footer() {
               href="https://discord.gg/PqgWZS7XeX"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="Discord"
             >
               <FaDiscord />
             </a>
@@ -48,7 +49,8 @@ export default function Footer() {
               href="https://twitter.com/YOUR_HANDLE"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="Twitter"
             >
               <FaTwitter />
             </a>
@@ -56,7 +58,8 @@ export default function Footer() {
               href="https://youtube.com/YOUR_CHANNEL"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="YouTube"
             >
               <FaYoutube />
             </a>
@@ -64,7 +67,8 @@ export default function Footer() {
               href="https://instagram.com/YOUR_HANDLE"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="Instagram"
             >
               <FaInstagram />
             </a>
@@ -72,7 +76,8 @@ export default function Footer() {
               href="https://facebook.com/YOUR_PAGE"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="Facebook"
             >
               <FaFacebook />
             </a>
@@ -80,7 +85,8 @@ export default function Footer() {
               href="https://tiktok.com/@YOUR_HANDLE"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="TikTok"
             >
               <FaTiktok />
             </a>
@@ -88,7 +94,8 @@ export default function Footer() {
               href="https://twitch.tv/YOUR_CHANNEL"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red-600 transition-all duration-300"
+              className="hover:text-red-600 transition-all duration-300 p-2"
+              aria-label="Twitch"
             >
               <FaTwitch />
             </a>

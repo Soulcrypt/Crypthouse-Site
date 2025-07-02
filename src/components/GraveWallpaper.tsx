@@ -14,7 +14,7 @@ export default function GraveWallpaper() {
       >
         <img
           src="/assets/graveyard-bg.png"
-          alt="Background"
+          alt="Graveyard background image"
           className="w-full h-full object-cover"
         />
       </video>

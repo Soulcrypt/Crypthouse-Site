@@ -8,8 +8,9 @@ export default function VideoModal({ onClose }: Props) {
     <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
       <div className="w-[90%] max-w-3xl relative">
         <button
-          className="absolute top-2 right-2 text-white text-2xl"
+          className="absolute top-2 right-2 text-white text-2xl p-2"
           onClick={onClose}
+          aria-label="Close video modal"
         >
           ✕
         </button>
