@@ -3,10 +3,18 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import clsx from "classnames";
 
+/**
+ * Responsive top navigation bar used across all pages.
+ * It collapses into a hamburger menu on small screens
+ * and changes background when scrolled.
+ */
 export default function NavBar() {
+  // Whether the mobile menu is open
   const [open, setOpen] = useState(false);
+  // Used to apply a background once the user scrolls down
   const [scrolled, setScrolled] = useState(false);
 
+  // Routes displayed in the navigation menu
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Games", path: "/games" },
@@ -16,7 +24,8 @@ export default function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // Change background after scrolling 50px
+      // Toggle background after scrolling a short distance
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,6 +34,7 @@ export default function NavBar() {
 
   return (
     <header
+      /* sticky navigation wrapper */
       className={clsx(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrolled

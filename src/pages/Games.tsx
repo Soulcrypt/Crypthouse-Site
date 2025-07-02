@@ -6,7 +6,9 @@ import FramedPanel from "../components/FramedPanel";
 import Footer from "../components/Footer";
 import "../styles/Games.css"; // Ensure the CSS file is imported
 
+/** List of published and upcoming titles */
 export default function Games() {
+  // Example data for each game card
   const games = [
     {
       id: "crypthouse",
@@ -52,6 +54,7 @@ export default function Games() {
 
       {/* 🎮 Games List */}
       <Section className="py-20">
+        {/* Display each game in a responsive grid */}
         <PageLayout layout="grid" columns={3} gap="gap-8">
           {games.map((game) => (
             <FramedPanel

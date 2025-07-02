@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import clsx from "classnames";
 
+/** Button that fades in after the user scrolls down, allowing a quick jump back to the top. */
 export default function ScrollToTopButton() {
+  // Track whether the button should be shown
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -16,6 +18,7 @@ export default function ScrollToTopButton() {
   };
 
   return (
+    // Floating action button
     <button
       onClick={scrollToTop}
       className={clsx(

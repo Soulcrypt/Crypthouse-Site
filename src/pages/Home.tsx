@@ -15,10 +15,13 @@ import Divider from "../components/Divider";
 import PageLayout from "../components/PageLayout";
 import Section from "../components/Section";
 
+/** Landing page showcasing the hero section and featured game */
 export default function Home() {
+  // Controls visibility of the promo video modal
   const [showTrailer, setShowTrailer] = useState(false);
 
   useEffect(() => {
+    // Initialize scroll animations
     AOS.init({ once: true });
   }, []);
 
@@ -28,6 +31,7 @@ export default function Home() {
       <NavBar />
 
       {/* ☠ Hero Section */}
+      {/* Hero background with parallax video */}
       <Section background="gradient" className="relative z-0 min-h-screen">
         <div className="absolute inset-0 pointer-events-none">
           <GraveWallpaper />

@@ -9,6 +9,7 @@ import Footer from "../components/Footer"; // Import Footer
 import DiscordBanner from "../components/DiscordBanner";
 import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa"; // Import social media icons
 
+/** Hub for links to community resources and social channels */
 export default function Community() {
   return (
     <div className="relative min-h-screen bg-black text-white font-gothic community-bg">

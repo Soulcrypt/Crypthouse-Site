@@ -4,11 +4,17 @@ import { useEffect } from "react";
 
 interface Props {
   children: React.ReactNode;
+  /** Delay before the animation begins */
   delay?: number;
+  /** Start offset on the Y axis */
   yOffset?: number;
-  duration?: number; // Add duration to the Props interface
+  /** Duration of the animation */
+  duration?: number;
 }
 
+/**
+ * Wraps content in an element that fades in when it enters the viewport.
+ */
 export default function ScrollReveal({
   children,
   delay = 0.2,
@@ -31,11 +37,12 @@ export default function ScrollReveal({
 
   return (
     <motion.div
-      ref={ref} // Ensure this is attached
+      ref={ref}
       initial={{ opacity: 0, y: yOffset }}
       animate={controls}
-      transition={{ duration, delay }} // Use the duration property here
+      transition={{ duration, delay }}
     >
+      {/* reveal target content */}
       {children}
     </motion.div>
   );

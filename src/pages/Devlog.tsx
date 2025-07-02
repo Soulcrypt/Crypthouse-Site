@@ -12,16 +12,19 @@ import FramedPanel from "../components/FramedPanel";
 import Divider from "../components/Divider";
 import "../styles/Devlog.css"; // Import the CSS file
 
+/** Developer diary with expandable markdown posts */
 export default function Devlog() {
+  // Loaded markdown posts
   const [posts, setPosts] = useState<{ id: string; content: string }[]>([]);
-  const [expandedPost, setExpandedPost] = useState<string | null>(null); // Track expanded post
+  // Track which post is currently expanded
+  const [expandedPost, setExpandedPost] = useState<string | null>(null);
 
   useEffect(() => {
     AOS.init({ once: true });
 
     // Dynamically import all Markdown files
     const importMarkdownFiles = async () => {
-      const markdownFiles = import.meta.glob("/src/devlog/*.md", { as: "raw" }); // Adjusted path for compatibility
+      const markdownFiles = import.meta.glob("/src/devlog/*.md", { as: "raw" });
       const loadedPosts = await Promise.all(
         Object.entries(markdownFiles).map(async ([path, loader]) => {
           const content = await loader();
