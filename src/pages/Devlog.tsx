@@ -6,8 +6,6 @@ import { Buffer } from "buffer";
 if (typeof globalThis !== "undefined" && !(globalThis as Record<string, unknown>).Buffer) {
   (globalThis as Record<string, unknown>).Buffer = Buffer;
 }
-import AOS from "aos";
-import "aos/dist/aos.css";
 import ReactMarkdown from "react-markdown";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -17,6 +15,7 @@ import Section from "../components/Section";
 import PageLayout from "../components/PageLayout";
 import FramedPanel from "../components/FramedPanel";
 import Divider from "../components/Divider";
+import ScrollReveal from "../components/ScrollReveal";
 
 /** Developer diary with expandable markdown posts */
 export default function Devlog() {
@@ -32,7 +31,6 @@ export default function Devlog() {
   const [expandedPost, setExpandedPost] = useState<string | null>(null);
 
   useEffect(() => {
-    AOS.init({ once: true });
 
     // Dynamically import all Markdown files
     const importMarkdownFiles = async () => {
@@ -66,19 +64,16 @@ export default function Devlog() {
       {/* 📝 Devlog Header */}
       <Section className="relative z-0 py-20 text-center">
         <FramedPanel variant="default" className="p-8 framed-panel-static">
-          <h1
-            className="text-5xl md:text-6xl font-bold tracking-widest text-white drop-shadow-[0_0_20px_rgba(255,0,0,0.5)]"
-            data-aos="fade-up"
-          >
-            Devlog
-          </h1>
-          <p
-            className="text-lg md:text-xl text-gray-300 mt-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Follow our journey as we bring Crypthouse Studio to life.
-          </p>
+          <ScrollReveal>
+            <h1 className="text-5xl md:text-6xl font-bold tracking-widest text-white drop-shadow-[0_0_20px_rgba(255,0,0,0.5)]">
+              Devlog
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-lg md:text-xl text-gray-300 mt-4">
+              Follow our journey as we bring Crypthouse Studio to life.
+            </p>
+          </ScrollReveal>
         </FramedPanel>
       </Section>
 

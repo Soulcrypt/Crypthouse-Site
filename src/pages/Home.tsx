@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useState } from "react";
 
 import NavBar from "../components/NavBar";
 import GraveWallpaper from "../components/GraveWallpaper";
@@ -20,10 +18,6 @@ export default function Home() {
   // Controls visibility of the promo video modal
   const [showTrailer, setShowTrailer] = useState(false);
 
-  useEffect(() => {
-    // Initialize scroll animations
-    AOS.init({ once: true });
-  }, []);
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden font-gothic text-white">
@@ -38,24 +32,20 @@ export default function Home() {
           <FogOverlay />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-40 md:py-60">
-          <h1
-            className="text-5xl md:text-7xl font-bold tracking-widest text-red-700 drop-shadow-[0_0_20px_rgba(255,0,0,0.3)] hero-title"
-            data-aos="fade-up"
-          >
-            Crypthouse Studio
-          </h1>
-          <p
-            className="text-lg md:text-xl text-gray-300 mt-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Immersive gothic experiences born in the shadows of the grave.
-          </p>
-          <div
-            className="mt-10 flex flex-col sm:flex-row gap-4"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
+          <ScrollReveal>
+            <h1
+              className="text-5xl md:text-7xl font-bold tracking-widest text-red-700 drop-shadow-[0_0_20px_rgba(255,0,0,0.3)] hero-title"
+            >
+              Crypthouse Studio
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-lg md:text-xl text-gray-300 mt-4">
+              Immersive gothic experiences born in the shadows of the grave.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <StoneButton onClick={() => setShowTrailer(true)}>
               ▶ Watch Trailer
             </StoneButton>
@@ -69,6 +59,7 @@ export default function Home() {
               </StoneButton>
             </a>
           </div>
+          </ScrollReveal>
         </div>
       </Section>
 
