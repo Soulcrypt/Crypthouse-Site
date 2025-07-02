@@ -1,5 +1,0 @@
-/* 🌐 Devlog Page Background */
-.devlog-bg {
-    background: url('/assets/devlog-bg.png') center center / cover no-repeat;
-    background-attachment: fixed; /* Optional: Makes the background fixed during scrolling */
-  }

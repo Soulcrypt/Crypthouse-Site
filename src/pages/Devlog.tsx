@@ -10,7 +10,6 @@ import Section from "../components/Section";
 import PageLayout from "../components/PageLayout";
 import FramedPanel from "../components/FramedPanel";
 import Divider from "../components/Divider";
-import "../styles/Devlog.css"; // Import the CSS file
 
 /** Developer diary with expandable markdown posts */
 export default function Devlog() {
@@ -39,7 +38,9 @@ export default function Devlog() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden font-gothic text-white devlog-bg">
+    <div
+      className="relative min-h-screen bg-black overflow-hidden font-gothic text-white page-bg bg-[url('/assets/devlog-bg.png')]"
+    >
       {/* ☠ NavBar */}
       <NavBar />
 

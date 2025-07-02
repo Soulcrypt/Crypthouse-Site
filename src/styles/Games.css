@@ -1,5 +1,0 @@
-/* 🌌 Games Page Background */
-.games-bg {
-  background: url('/assets/games-bg.png') center center / cover no-repeat;
-  background-attachment: fixed; /* Optional: Makes the background fixed during scrolling */
-}

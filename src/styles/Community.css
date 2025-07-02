@@ -1,5 +1,0 @@
-/* 🌐 Community Page Background */
-.community-bg {
-    background: url('/assets/community-bg.png') center center / cover no-repeat;
-    background-attachment: fixed; /* Optional: Makes the background fixed during scrolling */
-  }

@@ -1,6 +1,5 @@
 import NavBar from "../components/NavBar"; // Import NavBar
 import Section from "../components/Section";
-import "../styles/Community.css"; // Correct the path if necessary
 import PageLayout from "../components/PageLayout";
 import FramedPanel from "../components/FramedPanel";
 import Divider from "../components/Divider";
@@ -12,7 +11,9 @@ import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa"; // Import so
 /** Hub for links to community resources and social channels */
 export default function Community() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-gothic community-bg">
+    <div
+      className="relative min-h-screen bg-black text-white font-gothic page-bg bg-[url('/assets/community-bg.png')]"
+    >
       {/* ☠ NavBar */}
       <NavBar />
 

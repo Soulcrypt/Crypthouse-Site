@@ -376,3 +376,8 @@ footer a:hover {
 .animate-text-fill:hover {
   animation: textFill 1s ease-in-out infinite;
 }
+
+/* Generic page background */
+.page-bg {
+  @apply bg-fixed bg-cover bg-center;
+}

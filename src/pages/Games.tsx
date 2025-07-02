@@ -4,7 +4,6 @@ import PageLayout from "../components/PageLayout";
 import FramedPanel from "../components/FramedPanel";
 //import Divider from "../components/Divider";
 import Footer from "../components/Footer";
-import "../styles/Games.css"; // Ensure the CSS file is imported
 
 /** List of published and upcoming titles */
 export default function Games() {
@@ -36,7 +35,9 @@ export default function Games() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-black text-white font-gothic games-bg">
+    <div
+      className="relative min-h-screen bg-black text-white font-gothic page-bg bg-[url('/assets/games-bg.png')]"
+    >
       {/* ☠ NavBar */}
       <NavBar />
 

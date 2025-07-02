@@ -10,7 +10,7 @@ export function useParallax(speed: number) {
   // Track the current offset value
   const [offsetY, setOffsetY] = useState(0);
   // Store the animation frame id so it can be cancelled on unmount
-  const frame = useRef<number>();
+  const frame = useRef<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
